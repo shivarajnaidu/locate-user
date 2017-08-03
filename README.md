@@ -25,13 +25,38 @@ locateUser(req)
 const http = require('http');
 const locateUser = require('locate-user');
 
-http.createServer(function (req, res) {
-  const userLocation = locateUser(req);
-  res.end(userLocation);
+http.createServer(function(req, res) {
+
+    const userLocation = locateUser(req);
+    userLocation
+        .then(data => {
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify(data));
+        })
+        .catch(error => {
+            console.error(error)
+        });
 }).listen(3000);
+
 ```
+## Usage (Using Express.JS)
 
+```js
+'use strict';
+const express = require('express');
+const locateUser = require('locate-user');
 
+const app = express();
+
+app.get('/', (req, res, next) => {
+    const userLocation = locateUser(req);
+    userLocation
+        .then(data => res.json(data))
+        .catch(next);
+})
+app.listen(3000)
+
+```
 
 ### Please Contribute And Improve It..
 
