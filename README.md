@@ -53,7 +53,8 @@ app.get('/', (req, res, next) => {
     userLocation
         .then(data => res.json(data))
         .catch(next);
-})
+});
+
 app.listen(3000)
 
 ```
