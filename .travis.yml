@@ -5,5 +5,7 @@ node_js:
   - "6"
   - "7"
   - "8"
+  - "9"
+  - "10"
 env:
 - NODE_ENV=test
