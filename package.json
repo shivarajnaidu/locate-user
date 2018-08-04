@@ -1,6 +1,6 @@
 {
   "name": "locate-user",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Know Your Client/User's Location",
   "main": "index.js",
   "scripts": {
